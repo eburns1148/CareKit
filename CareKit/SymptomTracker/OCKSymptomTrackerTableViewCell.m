@@ -92,6 +92,8 @@ static const CGFloat HorizontalMargin = 10.0;
 
 - (void)updateView {
     _titleLabel.text = self.assessmentEvent.activity.title;
+    _titleLabel.textColor = self.assessmentEvent.activity.tintColor;
+    
     _textLabel.text = self.assessmentEvent.activity.text;
     
     _valueLabel.text = (self.assessmentEvent.result.valueString.length > 0) ? self.assessmentEvent.result.valueString : @"";
