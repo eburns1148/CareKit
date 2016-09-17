@@ -61,6 +61,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)carePlanStoreActivityListDidChange:(OCKCarePlanStore *)store;
 
+/**
+ Called when activities are loaded from the store.
+ 
+ @param store   The care plan store.
+ */
+- (void)carePlanStoreRetrievedActivities:(NSArray<OCKCarePlanActivity *> *)activities;
+
 @end
 
 
