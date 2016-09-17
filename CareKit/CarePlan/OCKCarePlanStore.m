@@ -544,10 +544,14 @@ static NSString * const OCKAttributeNameDayIndex = @"numberOfDaysSinceStart";
     
     [self activitiesWithType:type
                   completion:^(BOOL success, NSArray<OCKCarePlanActivity *> * _Nonnull activities, NSError * _Nonnull error) {
-                      NSArray<OCKCarePlanActivity *> *items = activities;
+                      NSArray<OCKCarePlanActivity *> *items = nil;
                       
                       if(_delegate && [_delegate respondsToSelector:@selector(carePlanStoreRetrievedActivities:)]) {
-                          [_delegate carePlanStoreRetrievedActivities:items];
+                          items = [_delegate carePlanStoreRetrievedActivities:activities];
+                      }
+                      
+                      if (items == nil) {
+                          items = activities;
                       }
                       
                       if (items.count > 0) {
