@@ -94,6 +94,12 @@
     NSAssert(self.navigationController, @"OCKConnectViewController must be embedded in a navigation controller.");
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [_tableView flashScrollIndicators];
+}
+
 - (void)setContacts:(NSArray<OCKContact *> *)contacts {
     _contacts = OCKArrayCopyObjects(contacts);
     [self prepareHeaderView];
