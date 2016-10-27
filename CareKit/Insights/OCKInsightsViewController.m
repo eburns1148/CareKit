@@ -111,6 +111,8 @@ static const CGFloat HeaderViewHeight = 60.0;
             }
         }
     }
+    
+    [_tableView flashScrollIndicators];
 }
 
 - (void)setItems:(NSArray<OCKInsightItem *> *)items {

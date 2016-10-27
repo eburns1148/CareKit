@@ -118,6 +118,8 @@
     NSAssert(self.navigationController, @"OCKCareCardViewController must be embedded in a navigation controller.");
     
     _weekViewController.careCardWeekView.delegate = self;
+    
+    [_tableView flashScrollIndicators];
 }
 
 - (void)showToday:(id)sender {
